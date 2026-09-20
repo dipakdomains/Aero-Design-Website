@@ -12,15 +12,15 @@
 
 <header>
   <nav class="nav">
-    <div class="logo">
+    <a class="logo" href="index.html">
       <img src="assets/logo-icon.png" alt="Aero">
       aero
-    </div>
+    </a>
     <ul class="nav-links">
       <li><a href="index.html#services" class="active">Services</a></li>
       <li><a href="works.html">Works</a></li>
-      <li><a href="#pricing">Pricing</a></li>
-      <li><a href="#blog">Blogs</a></li>
+      <li><a href="index.html#quote">Pricing</a></li>
+      <li><a href="works.html">Blogs</a></li>
       <li><a href="about.html">About us</a></li>
     </ul>
     <a href="#start" class="btn btn-dark">Start a Project</a>
@@ -47,15 +47,61 @@
       </div>
     </div>
     <div class="hero-media">
-      <div class="play-btn">PLAY</div>
+      <button type="button" class="play-btn" id="playBtn">PLAY</button>
     </div>
   </section>
 
   <!-- LOGO STRIP -->
   <section class="logo-strip wrap">
     <p>Empowering 150+ companies to achieve their goals and thrive.</p>
-    <div class="logo-row"><img src="assets/client-logos-row1.png" alt="Client logos"></div>
-    <div class="logo-row"><img src="assets/client-logos-row2.png" alt="Client logos"></div>
+    <div class="marquee-row">
+      <div class="marquee-track track-left">
+        <div class="logo-card"><img src="assets/logos/bloom.jpg" alt="Bloom Money"></div>
+        <div class="logo-card"><img src="assets/logos/rapidcanvas.jpg" alt="RapidCanvas"></div>
+        <div class="logo-card"><img src="assets/logos/bprhub.jpg" alt="BPR Hub"></div>
+        <div class="logo-card"><img src="assets/logos/bisolvent.jpg" alt="Bisolvent"></div>
+        <div class="logo-card"><img src="assets/logos/ultinityfilm.jpg" alt="Ultinity Film"></div>
+        <div class="logo-card"><img src="assets/logos/jungleace.jpg" alt="Jungle Ace"></div>
+        <div class="logo-card"><img src="assets/logos/morby.jpg" alt="Morby"></div>
+        <div class="logo-card"><img src="assets/logos/sulha.jpg" alt="Sulha"></div>
+        <div class="logo-card"><img src="assets/logos/wud.jpg" alt="WUD"></div>
+        <div class="logo-card"><img src="assets/logos/evergreen.jpg" alt="Evergreen"></div>
+        <!-- duplicate set for seamless loop -->
+        <div class="logo-card"><img src="assets/logos/bloom.jpg" alt="Bloom Money"></div>
+        <div class="logo-card"><img src="assets/logos/rapidcanvas.jpg" alt="RapidCanvas"></div>
+        <div class="logo-card"><img src="assets/logos/bprhub.jpg" alt="BPR Hub"></div>
+        <div class="logo-card"><img src="assets/logos/bisolvent.jpg" alt="Bisolvent"></div>
+        <div class="logo-card"><img src="assets/logos/ultinityfilm.jpg" alt="Ultinity Film"></div>
+        <div class="logo-card"><img src="assets/logos/jungleace.jpg" alt="Jungle Ace"></div>
+        <div class="logo-card"><img src="assets/logos/morby.jpg" alt="Morby"></div>
+        <div class="logo-card"><img src="assets/logos/sulha.jpg" alt="Sulha"></div>
+        <div class="logo-card"><img src="assets/logos/wud.jpg" alt="WUD"></div>
+        <div class="logo-card"><img src="assets/logos/evergreen.jpg" alt="Evergreen"></div>
+      </div>
+    </div>
+    <div class="marquee-row">
+      <div class="marquee-track track-right">
+        <div class="logo-card"><img src="assets/logos/qeraty.jpg" alt="Qeraty"></div>
+        <div class="logo-card"><img src="assets/logos/built.jpg" alt="Built"></div>
+        <div class="logo-card"><img src="assets/logos/jnpr.jpg" alt="JNPR"></div>
+        <div class="logo-card"><img src="assets/logos/bettermode.jpg" alt="Bettermode"></div>
+        <div class="logo-card"><img src="assets/logos/boro.jpg" alt="Boro"></div>
+        <div class="logo-card"><img src="assets/logos/currentclient.jpg" alt="CurrentClient"></div>
+        <div class="logo-card"><img src="assets/logos/travooo.jpg" alt="Travooo"></div>
+        <div class="logo-card"><img src="assets/logos/fillies-and-boots.svg" alt="Fillies and Boots"></div>
+        <div class="logo-card"><img src="assets/logos/filllo.svg" alt="Filllo"></div>
+        <!-- duplicate set for seamless loop -->
+        <div class="logo-card"><img src="assets/logos/qeraty.jpg" alt="Qeraty"></div>
+        <div class="logo-card"><img src="assets/logos/built.jpg" alt="Built"></div>
+        <div class="logo-card"><img src="assets/logos/jnpr.jpg" alt="JNPR"></div>
+        <div class="logo-card"><img src="assets/logos/bettermode.jpg" alt="Bettermode"></div>
+        <div class="logo-card"><img src="assets/logos/boro.jpg" alt="Boro"></div>
+        <div class="logo-card"><img src="assets/logos/currentclient.jpg" alt="CurrentClient"></div>
+        <div class="logo-card"><img src="assets/logos/travooo.jpg" alt="Travooo"></div>
+        <div class="logo-card"><img src="assets/logos/fillies-and-boots.svg" alt="Fillies and Boots"></div>
+        <div class="logo-card"><img src="assets/logos/filllo.svg" alt="Filllo"></div>
+      </div>
+    </div>
   </section>
 
   <!-- SERVICES -->
@@ -66,12 +112,96 @@
         <h2>We blend creativity, design, and technology to craft digital experiences that empower brands to lead and innovate.</h2>
       </div>
       <div class="service-list">
-        <div class="service-item"><span>Branding</span><span class="arrow">⌄</span></div>
-        <div class="service-item"><span>Websites</span><span class="arrow">⌄</span></div>
-        <div class="service-item"><span>UX/UI Design</span><span class="arrow">⌄</span></div>
-        <div class="service-item"><span>Mobile App</span><span class="arrow">⌄</span></div>
-        <div class="service-item"><span>SaaS Product</span><span class="arrow">⌄</span></div>
-        <div class="service-item"><span>Development</span><span class="arrow">⌄</span></div>
+        <div class="service-item-wrap open">
+          <button class="service-item" type="button">
+            <span>Branding</span><span class="arrow">⌄</span>
+          </button>
+          <div class="service-sub">
+            <ul>
+              <li>Logo Design</li>
+              <li>Visual Identity</li>
+              <li>Brand Guidelines</li>
+              <li>Naming &amp; Messaging</li>
+              <li>Social Media Kits</li>
+            </ul>
+            <a href="works.html">View related work ↗</a>
+          </div>
+        </div>
+        <div class="service-item-wrap">
+          <button class="service-item" type="button">
+            <span>Websites</span><span class="arrow">⌄</span>
+          </button>
+          <div class="service-sub">
+            <ul>
+              <li>Webflow Development</li>
+              <li>Landing Pages</li>
+              <li>E‑commerce Websites</li>
+              <li>CMS Integration</li>
+              <li>SEO Optimization</li>
+            </ul>
+            <a href="works.html">View related work ↗</a>
+          </div>
+        </div>
+        <div class="service-item-wrap">
+          <button class="service-item" type="button">
+            <span>UX/UI Design</span><span class="arrow">⌄</span>
+          </button>
+          <div class="service-sub">
+            <ul>
+              <li>Wireframing</li>
+              <li>Prototyping</li>
+              <li>User Research</li>
+              <li>Design Systems</li>
+              <li>Usability Testing</li>
+            </ul>
+            <a href="works.html">View related work ↗</a>
+          </div>
+        </div>
+        <div class="service-item-wrap">
+          <button class="service-item" type="button">
+            <span>Mobile App</span><span class="arrow">⌄</span>
+          </button>
+          <div class="service-sub">
+            <ul>
+              <li>iOS App Design</li>
+              <li>Android App Design</li>
+              <li>Cross‑Platform Apps</li>
+              <li>App Prototyping</li>
+              <li>App Store Optimization</li>
+            </ul>
+            <a href="works.html">View related work ↗</a>
+          </div>
+        </div>
+        <div class="service-item-wrap">
+          <button class="service-item" type="button">
+            <span>SaaS Product</span><span class="arrow">⌄</span>
+          </button>
+          <div class="service-sub">
+            <ul>
+              <li>Product Strategy</li>
+              <li>Dashboard Design</li>
+              <li>Onboarding Flows</li>
+              <li>Design Systems</li>
+              <li>MVP Development</li>
+            </ul>
+            <a href="works.html">View related work ↗</a>
+          </div>
+        </div>
+        <div class="service-item-wrap">
+          <button class="service-item" type="button">
+            <span>Development</span><span class="arrow">⌄</span>
+          </button>
+          <div class="service-sub">
+            <ul>
+              <li>Webflow</li>
+              <li>Wordpress</li>
+              <li>Front End Development</li>
+              <li>Back End Development</li>
+              <li>Responsive Web Design</li>
+            </ul>
+            <a href="works.html">View related work ↗</a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -79,66 +209,66 @@
   <!-- WORK -->
   <section class="work wrap" id="work">
     <div class="work-grid">
-      <div class="work-card">
+      <a class="work-card" href="work-fillies-and-boots.html">
         <div class="work-thumb"><img src="assets/work-rapidcanvas.jpg" alt="RapidCanvas AI"></div>
         <div class="work-info"><div class="txt"><h3>RapidCanvas AI</h3><p>Showcasing the creative journey behind Rapid Canvas's logo, brand identity &amp; Social Media Design.</p></div><span class="circ">↗</span></div>
-      </div>
-      <div class="work-card">
+      </a>
+      <a class="work-card" href="work-fillies-and-boots.html">
         <div class="work-thumb"><img src="assets/work-bisolvent.jpg" alt="Bisolvent"></div>
         <div class="work-info"><div class="txt"><h3>Bisolvent</h3><p>Showcasing the creative journey behind Rapid Canvas's logo, brand identity &amp; Social Media Design</p></div><span class="circ">↗</span></div>
-      </div>
-      <div class="work-card">
+      </a>
+      <a class="work-card" href="work-fillies-and-boots.html">
         <div class="work-thumb"><img src="assets/work-bloommoney.jpg" alt="Bloom Money"></div>
         <div class="work-info"><div class="txt"><h3>Bloom Money</h3><p>Showcasing the creative journey behind Rapid Canvas's logo, brand identity &amp; Social Media Design</p></div><span class="circ">↗</span></div>
-      </div>
-      <div class="work-card">
+      </a>
+      <a class="work-card" href="work-fillies-and-boots.html">
         <div class="work-thumb"><img src="assets/work-liveying.jpg" alt="LiveYing"></div>
         <div class="work-info"><div class="txt"><h3>LiveYing</h3><p>Showcasing the creative journey behind Rapid Canvas's logo, brand identity &amp; Social Media Design</p></div><span class="circ">↗</span></div>
-      </div>
+      </a>
       <a class="work-card" href="work-fillies-and-boots.html">
         <div class="work-thumb"><img src="assets/work-filliesboots.jpg" alt="Fillies and boots"></div>
         <div class="work-info"><div class="txt"><h3>Fillies and boots</h3><p>Showcasing the creative journey behind Rapid Canvas's logo, brand identity &amp; Social Media Design</p></div><span class="circ">↗</span></div>
       </a>
-      <div class="work-card">
+      <a class="work-card" href="work-fillies-and-boots.html">
         <div class="work-thumb"><img src="assets/work-wud.jpg" alt="WUD"></div>
         <div class="work-info"><div class="txt"><h3>WUD</h3><p>Showcasing the creative journey behind Rapid Canvas's logo, brand identity &amp; Social Media Design</p></div><span class="circ">↗</span></div>
-      </div>
-      <div class="work-card">
+      </a>
+      <a class="work-card" href="work-fillies-and-boots.html">
         <div class="work-thumb"><img src="assets/work-cnvrt.jpg" alt="CNVRT"></div>
         <div class="work-info"><div class="txt"><h3>CNVRT</h3><p>Showcasing the creative journey behind Rapid Canvas's logo, brand identity &amp; Social Media Design</p></div><span class="circ">↗</span></div>
-      </div>
-      <div class="work-card">
+      </a>
+      <a class="work-card" href="work-fillies-and-boots.html">
         <div class="work-thumb"><img src="assets/work-sknup.jpg" alt="Sknup"></div>
         <div class="work-info"><div class="txt"><h3>Sknup</h3><p>Showcasing the creative journey behind Rapid Canvas's logo, brand identity &amp; Social Media Design</p></div><span class="circ">↗</span></div>
-      </div>
+      </a>
     </div>
     <div class="work-foot"><a href="works.html" class="btn btn-outline">View all works ↗</a></div>
   </section>
 
   <!-- GET A QUOTE -->
-  <section class="quote wrap">
+  <section class="quote wrap" id="quote">
     <h2>Get a Quote <em>free &amp; fast!</em></h2>
     <div class="quote-grid">
-      <div class="quote-card">
+      <a class="quote-card" href="index.html#start">
         <div class="ic">📮</div>
         <h3>Drop Us a Line</h3>
         <p>Reach out and share your ideas — we're here to help bring them to life!</p>
-      </div>
-      <div class="quote-card">
+      </a>
+      <a class="quote-card" href="index.html#start">
         <div class="ic">🎧</div>
         <h3>Have a meeting</h3>
         <p>Let's connect and discuss how we can transform your vision into reality.</p>
-      </div>
-      <div class="quote-card">
+      </a>
+      <a class="quote-card" href="index.html#start">
         <div class="ic">📝</div>
         <h3>Free Quotation</h3>
         <p>Receive a personalized, no obligation quote tailored to your project needs.</p>
-      </div>
-      <div class="quote-card">
+      </a>
+      <a class="quote-card" href="index.html#start">
         <div class="ic">🤝</div>
         <h3>Work Together</h3>
         <p>Together, we can create something extraordinary. Let's make it happen!</p>
-      </div>
+      </a>
     </div>
     <a href="#start" class="btn btn-dark">Start a Project</a>
   </section>
@@ -229,7 +359,7 @@
             <span class="chip">more than 20k</span>
           </div>
         </div>
-        <button class="btn btn-outline">Submit</button>
+        <button type="button" class="btn btn-outline submit-btn">Submit</button>
       </div>
     </div>
   </section>
@@ -293,16 +423,6 @@
 <footer>
   <div class="footer-top">
     <div class="col">
-      <b>🇨🇦 Canada</b>
-      <span>Toronto, Ontario</span>
-      <span>+1 437 676 7917</span>
-    </div>
-    <div class="col">
-      <b>🇬🇷 Greece</b>
-      <span>Salaminos, Athens</span>
-      <span>+48 652 989 980</span>
-    </div>
-    <div class="col">
       <b>🌏 Global</b>
       <span>Bagbari, Sylhet‑3100</span>
       <span>+880 1758 154517</span>
@@ -322,35 +442,35 @@
           <p class="footer-desc">Partner with us to elevate your brand and business, even if you're still exploring your direction we're here to guide you.</p>
           <div class="footer-cta-btns">
             <a href="#start" class="btn btn-dark">Book a Free Call</a>
-            <a href="#" class="btn" style="background:#1a1a1a;color:#fff;">Chat with Us</a>
+            <a href="mailto:hello@aerodesign.agency" class="btn" style="background:#1a1a1a;color:#fff;">Chat with Us</a>
           </div>
         </div>
         <div style="text-align:right;">
-          <div class="footer-email">hello@aerodesign.agency <span class="copy">⧉</span></div>
+          <div class="footer-email"><a href="mailto:hello@aerodesign.agency">hello@aerodesign.agency</a> <span class="copy" onclick="navigator.clipboard.writeText('hello@aerodesign.agency');this.textContent='✓';setTimeout(()=>this.textContent='⧉',1500);" title="Copy email">⧉</span></div>
           <div class="footer-links">
             <div class="col">
               <b>Services</b>
-              <a href="#">Branding</a>
-              <a href="#">UI/UX Design</a>
-              <a href="#">Product design</a>
-              <a href="#">See all</a>
+              <a href="index.html#services">Branding</a>
+              <a href="index.html#services">UI/UX Design</a>
+              <a href="index.html#services">Product design</a>
+              <a href="works.html">See all</a>
             </div>
             <div class="col">
               <b>Works</b>
-              <a href="#">Cnvrt</a>
-              <a href="#">WUD</a>
-              <a href="#">RapidCanvas</a>
-              <a href="#">See all</a>
+              <a href="works.html">Cnvrt</a>
+              <a href="works.html">WUD</a>
+              <a href="works.html">RapidCanvas</a>
+              <a href="works.html">See all</a>
             </div>
           </div>
         </div>
       </div>
 
       <div class="footer-bottom-row">
-        <div class="deck-link"><span class="dot">◆</span> Sometimes, a PDF says it all &nbsp;<u>Download Company Deck</u></div>
+        <a class="deck-link" href="assets/aero-company-deck.pdf" download><span class="dot">◆</span> Sometimes, a PDF says it all &nbsp;<u>Download Company Deck</u></a>
         <div>© 2021-2025 Aero Design Agency , All Rights Reserved.</div>
         <div class="socials">
-          <a href="#">✦</a><a href="#">◎</a><a href="#">in</a><a href="#">Be</a><a href="#">X</a>
+          <a href="https://www.threads.net" target="_blank" rel="noopener" aria-label="Threads">✦</a><a href="https://www.instagram.com" target="_blank" rel="noopener" aria-label="Instagram">◎</a><a href="https://www.linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn">in</a><a href="https://www.behance.net" target="_blank" rel="noopener" aria-label="Behance">Be</a><a href="https://x.com" target="_blank" rel="noopener" aria-label="X">X</a>
         </div>
       </div>
     </div>
