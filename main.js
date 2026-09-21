@@ -201,3 +201,101 @@ if (filterPills.length) {
     });
   });
 }
+
+// ---------- Header scroll shadow ----------
+(function () {
+  const header = document.querySelector('header');
+  if (!header) return;
+  const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 8);
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+})();
+
+// ---------- Scroll-reveal animations ----------
+(function () {
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (prefersReduced) return;
+
+  // Staggered groups — each child fades up in sequence as its group enters view
+  const groups = [
+    '.hero-cta-row', '.hero-media',
+    '.work-grid > *',
+    '.quote-grid > *',
+    '.stats-grid > *', '.stats-row2 > *',
+    '.process-grid > *',
+    '.test-grid > *',
+    '.cs-3col > *',
+    '.cs-brand-grid > *',
+    '.cs-mission-grid > *',
+    '.cs-2col > *',
+  ];
+  groups.forEach(sel => {
+    document.querySelectorAll(sel).forEach((el, i) => {
+      el.setAttribute('data-reveal', '');
+      el.style.transitionDelay = (Math.min(i, 5) * 80) + 'ms';
+    });
+  });
+
+  // Single elements — fade up individually, no stagger
+  const singles = [
+    '.hero h1', '.hero-sub',
+    '.page-hero h1', '.page-hero .sub',
+    '.hero-photos img',
+    '.section-head h2',
+    '.quote > h2',
+    '.team h2', '.team p.desc', '.team-carousel',
+    '.faq-intro h2', '.faq-intro p',
+    '.success h2',
+    '.cs-hero h1', '.cs-hero .sub', '.cs-collage', '.cs-overview',
+    '.cs-full-img', '.cs-typo-card', '.cs-impact', '.cs-final-collage',
+    '.footer-cta h2', '.footer-cta .btn',
+    '.logo-strip p',
+  ];
+  singles.forEach(sel => {
+    document.querySelectorAll(sel).forEach(el => el.setAttribute('data-reveal', ''));
+  });
+
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+
+  document.querySelectorAll('[data-reveal]').forEach(el => io.observe(el));
+})();
+
+// ---------- Animated stat counters (About page) ----------
+(function () {
+  const counters = document.querySelectorAll('.stat-num');
+  if (!counters.length) return;
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (prefersReduced) return;
+
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const el = entry.target;
+      io.unobserve(el);
+      const raw = el.textContent.trim();
+      const match = raw.match(/^(\D*)(\d+)(\D*)$/);
+      if (!match) return;
+      const [, prefix, numStr, suffix] = match;
+      const target = parseInt(numStr, 10);
+      const duration = 1100;
+      const start = performance.now();
+      function tick(now) {
+        const p = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = prefix + Math.round(target * eased) + suffix;
+        if (p < 1) requestAnimationFrame(tick);
+        else el.textContent = raw;
+      }
+      requestAnimationFrame(tick);
+    });
+  }, { threshold: 0.4 });
+
+  counters.forEach(el => io.observe(el));
+})();
