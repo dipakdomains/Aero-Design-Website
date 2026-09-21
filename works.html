@@ -213,5 +213,53 @@
 </footer>
 
 <script src="main.js"></script>
+<script>
+  // Inline fallback: works-page filter pills, self-contained so this feature
+  // never depends on main.js finishing its network load first.
+  (function () {
+    var pills = document.querySelectorAll('.filter-pill');
+    if (!pills.length) return;
+    var cards = document.querySelectorAll('[data-cats]');
+    var grid = document.querySelector('.work-grid');
+    var emptyMsg = grid ? grid.querySelector('.filter-empty') : null;
+    if (grid && !emptyMsg) {
+      emptyMsg = document.createElement('div');
+      emptyMsg.className = 'filter-empty';
+      emptyMsg.textContent = 'No projects in this category yet — check back soon.';
+      grid.appendChild(emptyMsg);
+    }
+
+    function applyFilter(cat) {
+      var visibleCount = 0;
+      cards.forEach(function (card) {
+        var cats = card.dataset.cats.split(',');
+        var matches = (cat === 'All' || cats.indexOf(cat) !== -1);
+        if (matches) visibleCount++;
+        if (matches && card.style.display === 'none') {
+          card.style.display = '';
+          card.classList.add('filtering-out');
+          requestAnimationFrame(function () {
+            requestAnimationFrame(function () { card.classList.remove('filtering-out'); });
+          });
+        } else if (!matches && card.style.display !== 'none') {
+          card.classList.add('filtering-out');
+          setTimeout(function () { card.style.display = 'none'; }, 250);
+        }
+      });
+      if (emptyMsg) emptyMsg.classList.toggle('show', visibleCount === 0);
+    }
+
+    pills.forEach(function (pill) {
+      // Avoid double-binding if main.js already attached its own handler
+      if (pill.dataset.filterBound === '1') return;
+      pill.dataset.filterBound = '1';
+      pill.addEventListener('click', function () {
+        pills.forEach(function (p) { p.classList.remove('active'); });
+        pill.classList.add('active');
+        applyFilter(pill.dataset.filter);
+      });
+    });
+  })();
+</script>
 </body>
 </html>
